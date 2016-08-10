@@ -4,19 +4,21 @@ if [ $# -eq 0 ];then
 else
    case $1 in
        ''|*[!0-9]*)
-            echo "invalid input."
+            echo "invalid date input."
             exit 1
             ;;
        *) 
-            rows=$1
+            time=$1
             ;;
    esac
 fi
 
 mac=`cat macaddress` 
 echo "serching for pedmac: $mac"
+echo "serching for time: $time"
+exit 1
 echo "-------------------------------------"
-idsstring=`sqlite3 /var/acctd/cache.sqlite "SELECT id FROM record_cache where pedmac=\"$mac\" order by id desc limit $rows;"`
+idsstring=`sqlite3 /var/acctd/cache.sqlite "SELECT id FROM record_cache WHERE pedmac=\"$mac\" AND ctime>=$time order by id desc"`
 ids=(${idsstring// / })
 for (( i=${#ids[@]}-1 ; i>=0 ; i-- ))
 do
