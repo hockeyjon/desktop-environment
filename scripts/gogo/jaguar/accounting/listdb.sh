@@ -26,6 +26,8 @@ else
         ((idx++))
     done <$FILE
 
+
+    echo -e " ID   |\tCTIME\t\t\t     |  LRUID\t     |\tTYPE    | RSRC |  MACADDR\t   |   APPNAME  |  UNIT | AMT |   START TIME\t\t     |  END TIME"
     rowIdx=0
     while [ "$rowIdx" -lt ${#rows[@]} ];do
        #echo "row $idx:  ${rows[$rowIdx]}"
@@ -33,14 +35,14 @@ else
        colIdx=0
        IFS='|' read -a cols <<< "${rows[$rowIdx]}"
        while [ "$colIdx" -lt ${#cols[@]} ];do
-            if [ "$colIdx" -eq "1" ];then
+            if [ "$colIdx" -eq "1" ] || [ "$colIdx" -eq "9" ] || [ "$colIdx" -eq "10" ];then
                colVal=`echo ${cols[$colIdx]} | xargs -I {} date -d @{}`   
             elif [ "$colIdx" -eq "4" ] || [ "$colIdx" -eq "6" ] || [ "$colIdx" -eq "8" ];then
                colVal=`echo -e "${cols[$colIdx]}\t"`
             else
                colVal=${cols[$colIdx]}   
             fi
-            out+="$colVal || "   
+            out+="$colVal | "   
             ((colIdx++))
        done
        echo $out
