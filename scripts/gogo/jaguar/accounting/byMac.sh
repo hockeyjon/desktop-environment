@@ -42,3 +42,5 @@ do
     echo "end:      $end"
     echo "-------------------------------------"
 done
+echo
+echo "Date: `date`"

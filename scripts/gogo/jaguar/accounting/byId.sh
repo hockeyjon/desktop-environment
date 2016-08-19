@@ -1,22 +1,44 @@
 #!/bin/bash
+if [ $# -eq 0 ];then
+    rows=1
+else
+   case $1 in
+       ''|*[!0-9]*)
+            echo "invalid input."
+            exit 1
+            ;;
+       *) 
+            rows=$1
+            ;;
+   esac
+fi
 
-id=$1 
-ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
-type=`sqlite3 /var/acctd/cache.sqlite "SELECT type FROM record_cache where id=\"$1\";"`
-resource=`sqlite3 /var/acctd/cache.sqlite "SELECT resource FROM record_cache where id=\"$1\";"`
-pedmac=`sqlite3 /var/acctd/cache.sqlite "SELECT pedmac FROM record_cache where id=\"$1\";"`
-appname=`sqlite3 /var/acctd/cache.sqlite "SELECT appname FROM record_cache where id=\"$1\";"`
-unit=`sqlite3 /var/acctd/cache.sqlite "SELECT unit FROM record_cache where id=\"$1\";"`
-start=`sqlite3 /var/acctd/cache.sqlite "SELECT starttime FROM record_cache where id=\"$id\" order by id desc limit 1;" | xargs -I {} date -d @{}`
-end=`sqlite3 /var/acctd/cache.sqlite "SELECT endtime FROM record_cache where id=\"$id\" order by id desc limit 1;" | xargs -I {} date -d @{}`
-amount=`sqlite3 /var/acctd/cache.sqlite "SELECT amount FROM record_cache where id=\"$id\" order by id desc limit 1;"`
-echo "id:       $id"
-echo "ctime:    $ctime"
-echo "type:     $type"
-echo "resource: $resource"
-echo "pedmac:   $pedmac"
-echo "appname:  $appname"
-echo "unit:     $unit"
-echo "amount:   $amount"
-echo "start:    $start"
-echo "end:      $end"
+echo "-------------------------------------"
+idsstring=`sqlite3 /var/acctd/cache.sqlite "SELECT id FROM record_cache order by id desc limit $rows;"`
+ids=(${idsstring// / })
+for (( i=${#ids[@]}-1 ; i>=0 ; i-- ))
+do
+    id=${ids[i]}
+    ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
+    type=`sqlite3 /var/acctd/cache.sqlite "SELECT type FROM record_cache where id=\"$id\";"`
+    resource=`sqlite3 /var/acctd/cache.sqlite "SELECT resource FROM record_cache where id=\"$id\";"`
+    pedmac=`sqlite3 /var/acctd/cache.sqlite "SELECT pedmac FROM record_cache where id=\"$id\";"`
+    appname=`sqlite3 /var/acctd/cache.sqlite "SELECT appname FROM record_cache where id=\"$id\";"`
+    unit=`sqlite3 /var/acctd/cache.sqlite "SELECT unit FROM record_cache where id=\"$id\";"`
+    start=`sqlite3 /var/acctd/cache.sqlite "SELECT starttime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
+    end=`sqlite3 /var/acctd/cache.sqlite "SELECT endtime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
+    amount=`sqlite3 /var/acctd/cache.sqlite "SELECT amount FROM record_cache where id=\"$id\";"`
+    echo "id:       $id"
+    echo "ctime:    $ctime"
+    echo "type:     $type"
+    echo "resource: $resource"
+    echo "pedmac:   $pedmac"
+    echo "appname:  $appname"
+    echo "unit:     $unit"
+    echo "amount:   $amount"
+    echo "start:    $start"
+    echo "end:      $end"
+    echo "-------------------------------------"
+done
+echo
+echo "Date: `date`"
