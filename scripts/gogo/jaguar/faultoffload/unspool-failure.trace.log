@@ -1,0 +1,11 @@
+11:32:07.963605 == Info: About to connect() to services.bsg.gogoair.com port 443 (#0)
+11:32:07.963718 == Info:   Trying 52.5.105.34...
+11:32:07.963988 == Info: Name '172.20.10.1' family 2 resolved to '172.20.10.1' family 2
+11:32:07.964010 == Info: Local port: 0
+11:32:12.963814 == Info: After 4998ms connect time, move on!
+11:32:12.963885 == Info:   Trying 52.205.62.108...
+11:32:12.964253 == Info: Name '172.20.10.1' family 2 resolved to '172.20.10.1' family 2
+11:32:12.964271 == Info: Local port: 0
+11:32:15.463553 == Info: After 2498ms connect time, move on!
+11:32:15.463613 == Info: Failed connect to services.bsg.gogoair.com:443; Operation now in progress
+11:32:15.463626 == Info: Closing connection 0
