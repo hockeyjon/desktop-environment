@@ -106,6 +106,8 @@ alias addjagip='sudo ip addr add 172.20.1.102/24 dev eth1'
 alias deljagip='sudo ip addr del 172.20.1.102/24 dev eth1'
 alias sshjag='ssh root@172.20.1.1'
 alias aliaslist='cat ~/.bashrc | grep ^alias'
+alias vncdesktop='vncserver -geometry 1920x1080 :6'
+alias vnclaptop='vncserver -geometry 1440x900 :13'
 
 
 # enable programmable completion features (you don't need to enable
