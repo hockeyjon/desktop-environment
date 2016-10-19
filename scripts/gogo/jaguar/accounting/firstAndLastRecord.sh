@@ -5,7 +5,8 @@ ids=(${idsstring// / })
 for (( i=${#ids[@]}-1 ; i>=0 ; i-- ))
 do
     id=${ids[i]}
-    ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
+    ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";"`
+    ctimeH=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     type=`sqlite3 /var/acctd/cache.sqlite "SELECT type FROM record_cache where id=\"$id\";"`
     resource=`sqlite3 /var/acctd/cache.sqlite "SELECT resource FROM record_cache where id=\"$id\";"`
     pedmac=`sqlite3 /var/acctd/cache.sqlite "SELECT pedmac FROM record_cache where id=\"$id\";"`
@@ -14,7 +15,7 @@ do
     start=`sqlite3 /var/acctd/cache.sqlite "SELECT starttime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     end=`sqlite3 /var/acctd/cache.sqlite "SELECT endtime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     amount=`sqlite3 /var/acctd/cache.sqlite "SELECT amount FROM record_cache where id=\"$id\";"`
-    echo "id:  $id    ctime: $ctime    type: $type    amount: $amount   start: $start    end:  $end"
+    echo "id: $id  ctime: $ctime  ctimeH: $ctimeH  type: $type  amount: $amount  start: $start"
 done
 echo "-------------------------------------"
 echo
@@ -26,7 +27,8 @@ ids=(${idsstring// / })
 for (( i=${#ids[@]}-1 ; i>=0 ; i-- ))
 do
     id=${ids[i]}
-    ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
+    ctime=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";"`
+    ctimeH=`sqlite3 /var/acctd/cache.sqlite "SELECT ctime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     type=`sqlite3 /var/acctd/cache.sqlite "SELECT type FROM record_cache where id=\"$id\";"`
     resource=`sqlite3 /var/acctd/cache.sqlite "SELECT resource FROM record_cache where id=\"$id\";"`
     pedmac=`sqlite3 /var/acctd/cache.sqlite "SELECT pedmac FROM record_cache where id=\"$id\";"`
@@ -35,7 +37,7 @@ do
     start=`sqlite3 /var/acctd/cache.sqlite "SELECT starttime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     end=`sqlite3 /var/acctd/cache.sqlite "SELECT endtime FROM record_cache where id=\"$id\";" | xargs -I {} date -d @{}`
     amount=`sqlite3 /var/acctd/cache.sqlite "SELECT amount FROM record_cache where id=\"$id\";"`
-    echo "id:  $id    ctime: $ctime    type: $type    amount: $amount   start: $start    end:  $end"
+    echo "id: $id  ctime: $ctime  ctimeH: $ctimeH  type: $type  amount: $amount  start: $start"
 done
 echo
 echo "Date: `date`"
