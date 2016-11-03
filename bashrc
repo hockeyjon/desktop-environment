@@ -108,6 +108,7 @@ alias sshjag='ssh root@172.20.1.1'
 alias aliaslist='cat ~/.bashrc | grep ^alias'
 alias vncdesktop='vncserver -geometry 1920x1080 :6'
 alias vnclaptop='vncserver -geometry 1440x900 :13'
+alias killfirefox='ps -ef | grep firefox | grep kopp | grep -v auto | awk '{print $2}' | xargs -I {} kill -9'
 
 
 # enable programmable completion features (you don't need to enable
