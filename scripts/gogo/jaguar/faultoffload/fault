@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 2 ];then
+   echo "Invalid number of parameters.  Usage: fault.sh <event type> <message code>"
+   exit 1
+fi
+
+if [ $1 != "critical" ] &&  [ $1 != "abnormal" ] && [ $1 != "event" ] && [ $1 != "health" ]; then
+   echo "Invalid event type.  Usage: fault.sh <event type> <message code>"
+   exit 1
+fi
+
+faulttool -T $1 -t HW -c $2 -- Commentary
