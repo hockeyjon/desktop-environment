@@ -5,9 +5,25 @@ if [ $# -ne 2 ];then
    exit 1
 fi
 
-if [ $1 != "critical" ] &&  [ $1 != "abnormal" ] && [ $1 != "event" ] && [ $1 != "health" ]; then
-   echo "Invalid event type.  Usage: fault.sh <event type> <message code>"
-   exit 1
-fi
+case "$1" in
+        c)
+            type="critical"
+            ;;
+        a)
+            type="abnormal"
+            ;;
 
-faulttool -T $1 -t HW -c $2 -- Commentary
+        e)
+            type="event"
+            ;;
+        h)
+            type="health"
+            ;;
+        *)
+            echo $"Usage: $0 { c - critical | a - abnormal | e - event | h - health }"
+            exit 1
+esac
+
+cmd="faulttool -T $type -t HW -c $2 -- Hardware $type event."
+echo $cmd
+`$cmd`
