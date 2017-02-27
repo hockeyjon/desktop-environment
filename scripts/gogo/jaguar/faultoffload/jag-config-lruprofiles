@@ -1,0 +1,175 @@
+#!/usr/bin/python
+
+
+import sys
+import argparse
+import pymongo
+import json
+
+conn = pymongo.MongoClient()
+db = conn['jaguar']
+
+
+# Formatted dictionary report
+def report_dict(d, indent=""):
+    fmt = "%-20.20s %s"
+    dkeys = d.keys()
+    dkeys.sort()
+    for key in dkeys:
+        s = d[key]
+        if type(s) == dict:
+            print "%s%s" % (indent, key)
+            report_dict(s, indent + "  ")
+        else:
+            print fmt % (indent + key, s)
+
+
+# diagtool-like report
+def report_diag(d, indent=""):
+    dkeys = d.keys()
+    dkeys.sort()
+    for key in dkeys:
+        s = d[key]
+        if type(s) == dict:
+            report_diag(s, "%s.%s" % (indent, key))
+        else:
+            print "%s.%s = %s" % (indent, key, json.dumps(s))
+
+
+def print_lru(lru, show=False):
+    if not show:
+        show = lru.keys()
+    else:
+        show = show.split(",")
+
+    if 'service' in show:
+        fmt = "%-10.10s %6.6s %s"
+        print fmt % ("Service", "Active", "Location")
+        print fmt % ("-------", "------", "--------")
+        services = lru['service'].keys()
+        services.sort()
+        for service in services:
+            s = lru['service'][service]
+            print fmt % (service, "  *  " if s['active'] else "", s.get('location', ""))
+
+    for pkey in ['apiInfo', 'settings', 'uiProfile', 'version', 'app']:
+        if pkey in show:
+            fmt = "%-20.20s %s"
+            print
+            print fmt % (pkey, "Value")
+            print fmt % ("--------------------", "--------------------------")
+            report_dict(lru[pkey])
+
+
+def main():
+    lruprofiles = list(db['lruprofiles'].find({}))
+    lru = lruprofiles[0]
+    update = False
+
+    if args.acid:
+        lru['settings']['acid'] = args.acid
+        update = True
+
+    if args.ipAddress1:
+        aircardip = lru['settings']['ipAddress']
+        if len(aircardip) == 0:
+            aircardip.extend(['', ''])
+        aircardip[0] = args.ipAddress1
+        update = True
+
+    if args.ipAddress2:
+        aircardip = lru['settings']['ipAddress']
+        if len(aircardip) == 0:
+            aircardip.extend(['', ''])
+        aircardip[1] = args.ipAddress2
+        update = True
+
+    if args.serial:
+        lru['serial'] = args.serial
+        update = True
+
+    if args.version:
+        lru['version']['software']['current'] = args.version
+        update = True
+
+    if args.partno:
+        lru['version']['software']['partNo'] = args.partno
+        update = True
+
+    if args.airshow:
+        lru['app']['rcAirshow']['update']['pending'] = args.airshow
+        update = True
+
+    if args.key:
+        if args.value and args.json:
+            args.value = json.loads(args.value)
+        sarr = args.key.split(".")
+        ldict = adict = lru
+        for key in sarr:
+            if key in adict:
+                ldict = adict
+                adict = adict[key]
+            else:
+                if args.value != None:
+                    ldict = adict
+                    adict = ldict[key] = {}
+                else:
+                    print "Cannot find key %s" % (key)
+                    raise (Exception('Key Error'))
+        if args.value != None:
+            if args.value in ['False', 'false']:
+                ldict[key] = False
+            elif args.value in ['True', 'true']:
+                ldict[key] = True
+            else:
+                ldict[key] = args.value
+            update = True
+
+        elif args.delete:
+            del ldict[key]
+            update = True
+
+        else:
+            if type(adict) == dict:
+                report_diag(adict, args.key)
+            else:
+                print adict
+            return
+
+    if update:
+        db['lruprofiles'].remove({'_id': lru['_id']})
+        db['lruprofiles'].insert(lru)
+
+    elif not args.quiet:
+        print_lru(lru, args.show)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--acid", "-a", help="Modify acid in lruprofiles")
+    parser.add_argument("--ipAddress1", "-ip1", help="Modify primary aircardIP in lruprofiles")
+    parser.add_argument("--ipAddress2", "-ip2", help="Modify secondary aircardIP in lruprofiles")
+    parser.add_argument("--serial", "-s", help="Modify serial number in lruprofiles")
+    parser.add_argument("--version", "-v", help="Modify version number in lruprofiles")
+    parser.add_argument("--partno", "-p", help="Modify SW TLA part number in lruprofiles")
+
+    parser.add_argument("--show", "-w", help="Formattted subdocument report")
+    parser.add_argument("--key", "-k", help="Report setting")
+    parser.add_argument("--value", "-V", help="Modify setting")
+    parser.add_argument("--json", "-j", action="store_true", help="Value is a JSON string")
+
+    parser.add_argument("--quiet", "-q", action="store_true", help="Supress output")
+    parser.add_argument("--debug", action="store_true", default=False, help="Show debugging")
+    parser.add_argument("--delete", "-d", action="store_true", default=False, help="Remove key")
+    parser.add_argument("--airshow", "-flag", help="Modify airshow content update flag")
+    args = parser.parse_args()
+
+    try:
+        main()
+    except Exception as e:
+        if args.debug:
+            import traceback
+
+            traceback.print_exc()
+        print e
+        sys.exit(1)
