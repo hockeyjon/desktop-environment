@@ -1,0 +1,19 @@
+ 	 	 	Balance Forward - House Charges	 	 	 	 	$1,045.05
+1/2/2017	1701020029 	View Receipt 	Adult Tennis Clinic 	$36.00	$0.00	$0.00	$0.00	$36.00
+1/2/2017	1701020055 	View Receipt 	Massage/SkinCare Fees 	$85.00	$0.00	$0.00	$0.00	$85.00
+1/2/2017	1701020056 	View Receipt 	Massage/SkinCare Tips 	$20.00	$0.00	$0.00	$0.00	$20.00
+1/15/2017	1701150009 	View Receipt 	Massage/SkinCare Fees 	$85.00	$0.00	$0.00	$0.00	$85.00
+1/15/2017	1701150010 	View Receipt 	Massage/SkinCare Tips 	$16.00	$0.00	$0.00	$0.00	$16.00
+1/17/2017	1701170043 	View Receipt 	Jr Group Tennis 	$105.00	$0.00	$0.00	$0.00	$105.00
+1/17/2017	1701170122 	View Receipt 	Jr Group Tennis 	$157.00	$0.00	$0.00	$0.00	$157.00
+1/17/2017	1701170133 	View Receipt 	Jr Group Tennis 	$157.00	$0.00	$0.00	$0.00	$157.00
+1/19/2017	1701190030 	View Receipt 	Massage/SkinCare Fees 	$85.00	$0.00	$0.00	$0.00	$85.00
+1/19/2017	1701190031 	View Receipt 	Massage/SkinCare Tips 	$18.00	$0.00	$0.00	$0.00	$18.00
+1/19/2017	864342 	View Receipt 	Terrace Food 	$64.30	$12.86	$0.00	$3.86	$81.02
+1/19/2017	864342 	View Receipt 	Terrace Beverage 	$6.50	$1.30	$0.00	$0.39	$8.19
+1/19/2017	DIRPAY 	 	Payment - Thank You 	($1,045.05)	$0.00	$0.00	$0.00	($1,045.05)
+1/26/2017	864963 	View Receipt 	Terrace Food 	$42.00	$8.40	$0.00	$2.52	$52.92
+1/26/2017	864963 	View Receipt 	Terrace Beverage 	$13.00	$2.60	$0.00	$0.78	$16.38
+1/26/2017	864963 	View Receipt 	Terrace Wine 	$8.00	$1.60	$0.00	$0.48	$10.08
+1/31/2017	n/a 	 	Accrue Monthly Dues 	$414.00	$0.00	$0.00	$0.00	$414.00
+1/31/2017	n/a 	 	Par3 Capital Fee 	$60.00	$0.00	$0.00	$0.00	$60.00

@@ -1,0 +1,103 @@
+1489691797802	geckodriver	INFO	Listening on 127.0.0.1:56154
+1489691798863	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.a2dQnekyeHKV
+1489691798864	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489691798912	geckodriver::marionette	INFO	Connecting to Marionette on localhost:56163
+1489691799420	Marionette	INFO	Listening on port 56163
+1489691800427	Marionette	INFO	startBrowser fb0c445d-22e2-1444-bb33-4f50efb74854
+1489692464643	geckodriver	INFO	Listening on 127.0.0.1:56419
+1489692465690	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.HIqOedGEG5Pq
+1489692465691	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489692465693	geckodriver::marionette	INFO	Connecting to Marionette on localhost:56425
+1489692466164	Marionette	INFO	Listening on port 56425
+1489692467129	Marionette	INFO	startBrowser 961224e5-2529-2640-b792-7efcd499201a
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489692749622	geckodriver	INFO	Listening on 127.0.0.1:56847
+1489692750675	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.hArHr8kHzHmB
+1489692750676	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489692750677	geckodriver::marionette	INFO	Connecting to Marionette on localhost:56854
+1489692751120	Marionette	INFO	Listening on port 56854
+1489692752089	Marionette	INFO	startBrowser d5199553-4c18-5c4a-b190-1170eb618f8a
+1489692997484	geckodriver	INFO	Listening on 127.0.0.1:57016
+1489692998533	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.Jl55HzmjZGFH
+1489692998534	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489692998536	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57022
+1489692998966	Marionette	INFO	Listening on port 57022
+1489692999949	Marionette	INFO	startBrowser 7498c7ae-e216-2f45-b38b-a86efa426618
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 263: TypeError: this.controller is undefined
+JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 263: TypeError: this.controller is undefined
+1489695161140	geckodriver	INFO	Listening on 127.0.0.1:58138
+1489695162190	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.B2SZW59qQXPf
+1489695162191	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489695162193	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58144
+1489695162655	Marionette	INFO	Listening on port 58144
+1489695163613	Marionette	INFO	startBrowser cbe9698e-43f7-ec44-8472-b72d9292ddef
+1489695550788	geckodriver	INFO	Listening on 127.0.0.1:58373
+1489695551841	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.jLPus1neXXK1
+1489695551842	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489695551844	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58379
+1489695552330	Marionette	INFO	Listening on port 58379
+1489695553278	Marionette	INFO	startBrowser ebb32edb-6e32-ef4a-8b18-1382cf8fe8fd
+1489695696991	geckodriver	INFO	Listening on 127.0.0.1:58567
+1489695698062	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.wFA4oaD96cJd
+1489695698063	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489695698067	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58573
+1489695698489	Marionette	INFO	Listening on port 58573
+1489695699428	Marionette	INFO	startBrowser 6314eaec-f604-d24a-9115-d906878f3bfd
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489696723285	geckodriver	INFO	Listening on 127.0.0.1:59115
+1489696724337	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.Ofb4XUTlpNeA
+1489696724338	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489696724340	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59121
+1489696724809	Marionette	INFO	Listening on port 59121
+1489696725809	Marionette	INFO	startBrowser 71d8f3d1-6351-2d4f-a419-bb56f729e843
+1489696786820	geckodriver	INFO	Listening on 127.0.0.1:59244
+1489696787868	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.HZ6FZ8FNUS9Q
+1489696787869	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489696787871	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59250
+1489696788326	Marionette	INFO	Listening on port 59250
+1489696789265	Marionette	INFO	startBrowser 597ea72e-c6c1-0644-a921-5d22c5f93c2e
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489696850985	geckodriver	INFO	Listening on 127.0.0.1:59485
+1489696852034	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.IB8HRLgVQJQe
+1489696852034	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489696852039	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59491
+1489696852476	Marionette	INFO	Listening on port 59491
+1489696853404	Marionette	INFO	startBrowser 738bc454-5604-b746-a2bf-9530ca8f25d9
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489698798980	geckodriver	INFO	Listening on 127.0.0.1:60240
+1489698800024	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.lkPTtpvsYEcw
+1489698800025	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489698800029	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60246
+1489698800459	Marionette	INFO	Listening on port 60246
+1489698801400	Marionette	INFO	startBrowser 6ca1a738-2193-134f-9212-5c78974265ac
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489699341285	geckodriver	INFO	Listening on 127.0.0.1:60594
+1489699342338	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.NOqUJmaQNpSk
+1489699342338	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489699342340	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60600
+1489699342767	Marionette	INFO	Listening on port 60600
+1489699343696	Marionette	INFO	startBrowser 792e39b6-fb00-9f47-9eec-48c2c2ee5072
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489702835963	geckodriver	INFO	Listening on 127.0.0.1:63055
+1489702837017	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.Ep88DJKWmW52
+1489702837018	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489702837022	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63061
+1489702837484	Marionette	INFO	Listening on port 63061
+1489702838454	Marionette	INFO	startBrowser 03a1447d-aa5a-d345-89ea-94d27ac45d78
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+1489703146801	geckodriver	INFO	Listening on 127.0.0.1:63369
+1489703147842	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.mq5TQ2uuSeer
+1489703147843	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489703147845	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63375
+1489703148298	Marionette	INFO	Listening on port 63375
+1489703149241	Marionette	INFO	startBrowser 9353c340-5999-674a-8200-6fc7f2438456
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
+JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 263: TypeError: this.controller is undefined
+1489704347413	geckodriver	INFO	Listening on 127.0.0.1:64380
+1489704348458	mozprofile::profile	INFO	Using profile path /var/folders/98/2rgznzrj1yz1f5kl5vs_vr7x50b1zy/T/rust_mozprofile.RmHlMi0MjMzw
+1489704348459	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1489704348461	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64387
+1489704348996	Marionette	INFO	Listening on port 64387
+1489704350103	Marionette	INFO	startBrowser 10e004b1-9189-724c-94d3-f9d9b4c9fd02
+JavaScript warning: https://checkme.nanorep.co/widget/widget.html?cv=8D44291C99A8F68#account=checkme&kb=78650635&doctype=loose&refencoded=true&referer=aHR0cHM6Ly9taW50LmludHVpdC5jb20vb3ZlcnZpZXcuZXZlbnQ_&cnf=true&reportEvents=true&dynamicsize=true&dynamicmaxsize=800&notifyclick=true, line 179: unreachable code after return statement
