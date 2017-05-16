@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 SLEEP_TIME = 0 #This is used to slow the transaction entry speed for visual confirmaton and debugging.
-STATEMENT = "072016.bccStatement.txt"
+STATEMENT = "bccStatement.txt"
 MINT_START_PAGE = "https://mint.intuit.com/login.event?task=L&messageId=6&country=US&nextPage=overview.event"
 TIMEOUT = 30
 logFile = "transactionEntryEngine.log"
@@ -110,6 +110,12 @@ class TransactionEntryEngine():
     def enterTransaction(self, date, description, catagory, amount):
         self.driver.find_element_by_id("controls-add").click()
         time.sleep(SLEEP_TIME)
+        if "(" in amount:
+            self.driver.find_element_by_id("txnEdit-mt-income").click()
+            amount = amount[1:-1]
+            catagory = "Uncategorized"
+        else:
+            self.driver.find_element_by_id("txnEdit-mt-expense").click()
         field = self.wait("txnEdit-date-input")
         field.clear()
         field.send_keys(date)
@@ -130,6 +136,11 @@ class TransactionEntryEngine():
         field.send_keys(amount)
         logger.debug("Entering amount: " + amount)
         time.sleep(SLEEP_TIME)
+        if self.driver.find_element_by_id('txnEdit-mt-cash-split').is_selected():
+            logger.debug("Unchecking 'automatically deduct this from my last ATM withdrawal' ")
+            self.driver.find_element_by_id('txnEdit-mt-cash-split').click()
+        else:
+            logger.debug("'automatically deduct this from my last ATM withdrawal' was not checked.")
         self.driver.find_element_by_id("txnEdit-submit").click()
         time.sleep(3) # This is needed to give time for transaction to save so "+ Transaction" can be clicked.
 
@@ -181,7 +192,7 @@ def parseStatement():
     logger.debug("Starting TransactionEntryEngine")
     engine = TransactionEntryEngine()
     for line in content:
-        if "Balance Forward" in line or "Payment" in line:
+        if "Balance Forward" in line or "Payment" in line or line.isspace():
             continue
         elements = line.split("\t")
         date = elements[0]
@@ -196,5 +207,7 @@ def parseStatement():
 
 if __name__ == "__main__":
     logger.debug("Stating main")
+    if SLEEP_TIME < 0:
+        print ("SLEEP_TIME navigation delay is set to " + str(SLEEP_TIME))
     parseStatement()
 
