@@ -21,6 +21,11 @@ def set_up_second(set_up_first):
 
     yield set_up_first
 
+def get_value_one():
+    return "one"
+
+def get_value_two():
+    return "two"
 
 def test_one(set_up_second):
     assert set_up_second["var1"] == "set_up_first"
@@ -36,3 +41,7 @@ def test_four(set_up_second, set_up_first):
 
 def test_five(set_up_second, set_up_first):
         assert set_up_first["var1"] == "set_up_first"
+
+@pytest.mark.parametrize("value", [get_value_one(), get_value_two(), "three"])
+def test_six(value):
+    assert "wrong" == value, "Failed on {}".format(value)
