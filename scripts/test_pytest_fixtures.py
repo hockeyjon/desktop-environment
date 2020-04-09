@@ -13,7 +13,7 @@ def static_init(cls):
     return cls
 
 @static_init
-class PayloadBuilder():
+class TestDataBuilder():
     """
     Statuc class that Builds payloads to be used as the test body in simulated
     HTTP requests from IOEX models
@@ -23,8 +23,16 @@ class PayloadBuilder():
     @classmethod
     def static_init(cls):
         payload = {}
+        ret_val = None
         setattr(cls, 'payload', payload)
+        setattr(cls, 'ret_val', ret_val)
         payload.update(payload1 = "test_payload1")
+        cls.set_ret_val()
+
+
+    @classmethod
+    def set_ret_val(cls):
+        cls.ret_val = "expected_ret_val"
 
 
 def get_var():
@@ -81,8 +89,12 @@ class TestClass:
     def test_six(self, value1, value2):
         assert value1 == value2, "Failed on {}".format(value1)
 
-    parameter_values = [("test7", PayloadBuilder.payload["payload1"])]
+    parameter_values = [("test7", TestDataBuilder.payload["payload1"])]
     @pytest.mark.parametrize("testid, payload", parameter_values)
     def test_seven(self, testid, payload):
         assert payload == "test_payload1", "{} failed".format(testid)
 
+    parameter_values = [("test8", TestDataBuilder.ret_val)]
+    @pytest.mark.parametrize("testid, ret_val", parameter_values)
+    def test_eight(self, testid, ret_val):
+        assert ret_val == "expected_ret_val", "{} failed".format(testid)
